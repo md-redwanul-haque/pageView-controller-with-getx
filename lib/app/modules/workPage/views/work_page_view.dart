@@ -11,7 +11,7 @@ class WorkPageView extends GetView<WorkPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('WorkPageView'),
+        title: Text('Work Page View'),
         centerTitle: true,
       ),
       body: PageView(
