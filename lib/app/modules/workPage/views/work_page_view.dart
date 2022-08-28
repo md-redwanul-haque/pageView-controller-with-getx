@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../orangePage.dart';
 import '../controllers/work_page_controller.dart';
 
 class WorkPageView extends GetView<WorkPageController> {
@@ -21,23 +22,7 @@ class WorkPageView extends GetView<WorkPageController> {
           Container(color: Colors.blue,child: Obx(()=>GestureDetector(onTap:(){
             controller.pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.ease);
           },child: Text('${controller.car.value}')),)),
-          Container(color: Colors.orange,child:Column(
-            children: [
-              Obx(()=>GestureDetector(
-                onTap: (){
-                  controller.pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.ease);
-
-                },
-                child: Text('${controller.car.value}'),),),
-              Obx(()=>GestureDetector(
-                onTap: (){
-                  controller.pageController.previousPage(duration: Duration(seconds: 1), curve: Curves.ease);
-
-                },
-                child: Text('${controller.car.value}'),),),
-            ],
-          ) ),
-
+          orangeWidget(controller: controller,),
           Container(color: Colors.green,child: Obx(()=>Text('${controller.car.value}'),)),
 
         ],
@@ -45,3 +30,5 @@ class WorkPageView extends GetView<WorkPageController> {
     );
   }
 }
+
+

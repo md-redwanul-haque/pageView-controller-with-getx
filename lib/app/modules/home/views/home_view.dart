@@ -1,3 +1,4 @@
+import 'package:bd_gov_mochta_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,12 +13,34 @@ class HomeView extends GetView<HomeController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'homePage',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: Column(
+        children: [
+          Center(
+            child: GestureDetector(
+              onTap: (){
+                Get.toNamed(Routes.WORK_PAGE);
+              },
+              child: Text(
+                'homePage',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ),
+          Center(
+            child: GestureDetector(
+              onTap: (){
+                Get.toNamed(Routes.TESTPAGE);
+              },
+              child: Text(
+                'TestPage',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ),
+          Image.network('https://i.postimg.cc/NfKpGHBZ/5974217.jpg')
+        ],
+      )
+
     );
   }
 }

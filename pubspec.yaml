@@ -7,6 +7,8 @@ environment:
 
 dependencies: 
   cupertino_icons: ^1.0.2
+  hive:
+  hive_flutter:
   animated_button_bar: ^0.0.2
   google_fonts: ^2.3.1
   font_awesome_flutter: ^9.2.0
@@ -18,6 +20,8 @@ dependencies:
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
+  hive_generator:
+  build_runner:
 
 flutter: 
 
