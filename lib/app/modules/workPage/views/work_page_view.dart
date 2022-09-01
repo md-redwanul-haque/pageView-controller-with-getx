@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../orangePage.dart';
 import '../controllers/work_page_controller.dart';
 
+
 class WorkPageView extends GetView<WorkPageController> {
 
 
@@ -25,10 +26,14 @@ class WorkPageView extends GetView<WorkPageController> {
           orangeWidget(controller: controller,),
           Container(color: Colors.green,child: Obx(()=>Text('${controller.car.value}'),)),
 
+
+
         ],
       )
     );
   }
 }
+
+
 
 

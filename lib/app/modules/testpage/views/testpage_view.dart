@@ -13,15 +13,10 @@ class TestpageView extends GetView<TestpageController> {
         title: Text('TestpageView'),
         centerTitle: true,
       ),
-      body: GestureDetector(
-        onTap: (){
-          Get.toNamed(Routes.WORK_PAGE);
-        },
-        child: Center(
-          child: Text(
-            'TestpageView is working',
-            style: TextStyle(fontSize: 20),
-          ),
+      body: Center(
+        child: Text(
+          'TestpageView is working',
+          style: TextStyle(fontSize: 20),
         ),
       ),
     );

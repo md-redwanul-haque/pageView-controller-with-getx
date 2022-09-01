@@ -1,4 +1,5 @@
 import 'package:bd_gov_mochta_app/app/modules/workPage/controllers/work_page_controller.dart';
+import 'package:flutter_wizard/flutter_wizard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 class orangeWidget extends StatelessWidget {

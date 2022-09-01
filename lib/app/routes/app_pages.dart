@@ -37,5 +37,6 @@ class AppPages {
       page: () => HiveWorkView(),
       binding: HiveWorkBinding(),
     ),
+
   ];
 }
