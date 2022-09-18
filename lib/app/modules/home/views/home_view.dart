@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
+import '../dropDown.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
@@ -13,34 +14,29 @@ class HomeView extends GetView<HomeController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Center(
-            child: GestureDetector(
-              onTap: (){
-                Get.toNamed(Routes.WORK_PAGE);
-              },
-              child: Text(
-                'homePage',
-                style: TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            Center(
+              child: GestureDetector(
+                onTap: (){
+                  Get.toNamed(Routes.WORK_PAGE);
+                },
+                child: Text(
+                  'homePage',
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
             ),
-          ),
-          Center(
-            child: GestureDetector(
-              onTap: (){
-                Get.toNamed(Routes.TESTPAGE);
-              },
-              child: Text(
-                'TestPage',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-          ),
-          Image.network('https://i.postimg.cc/NfKpGHBZ/5974217.jpg')
-        ],
+           DropDownButtonFormFiled(controller: controller, list: controller.wards,item: controller.ward.value,),
+          ],
+
+        ),
       )
 
     );
   }
 }
+
+

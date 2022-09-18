@@ -18,6 +18,7 @@ dependencies:
   flutter_wizard: ^2.0.5
   flutter: 
     sdk: flutter
+  sqflite: ^2.0.3+1
 
 dev_dependencies: 
   flutter_test: 
