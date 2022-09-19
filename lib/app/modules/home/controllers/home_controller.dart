@@ -1,8 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+import '../../../data/Employee_Model.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
-
+  RxList<EmployeeModel> employees =<EmployeeModel>[].obs;
+  var  name =TextEditingController();
+  var address = TextEditingController();
   final count = 0.obs;
   var wards =[
     'ওয়ার্ড নং ০১',

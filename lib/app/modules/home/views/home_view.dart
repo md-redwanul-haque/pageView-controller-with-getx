@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 import '../dropDown.dart';
+import '../dynamicListView.dart';
 
 class HomeView extends GetView<HomeController> {
   @override
@@ -30,6 +31,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
            DropDownButtonFormFiled(controller: controller, list: controller.wards,item: controller.ward.value,),
+            DynamicItenToListView(controller: controller)
           ],
 
         ),
@@ -38,5 +40,6 @@ class HomeView extends GetView<HomeController> {
     );
   }
 }
+
 
 
