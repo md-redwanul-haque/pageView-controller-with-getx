@@ -111,17 +111,7 @@ class HomeView extends GetView<HomeController> {
                               width: 7,
                             ),
                             Expanded(
-                              child: ListTile(
-                                title: Text(controller.employees.value[index].name.toString(),
-                                    maxLines: 1,
-                                    style: Get.textTheme.bodyText1
-                                        ?.apply(color:  Get.theme.primaryColor,)),
-                                subtitle: Text(controller.employees.value[index].address.toString(),
-                                    style: Get.textTheme.bodyText2, maxLines: 1),
-                                onTap: () {},
-                                onLongPress: () {},
-                                dense: false,
-                              ),
+                              child:DropDownButtonFormFiled(controller: controller, list: controller.wards,item: controller.ward.value,),
                             ),
                           ],
                         ),
@@ -132,12 +122,12 @@ class HomeView extends GetView<HomeController> {
             ),
 
 
-
-
-
             Column(
               children: [
-                DropDownButtonFormFiled(controller: controller, list: controller.wards,item: controller.ward.value,),
+                ElevatedButton(onPressed: (){
+                  controller.addElement(controller.testList);
+                }, child: Text('Add')),
+
               ],
             ),
             ElevatedButton(onPressed: (){

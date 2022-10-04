@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:intl/intl.dart';
+
 
 
 import '../employee_model.dart';
@@ -79,9 +79,9 @@ class HomeController extends GetxController {
 
   }
 
-  addElement(elementSetails){
+  addElement(List details){
 
-    ElementS =Elements(elementDetails:elementSetails );
+    ElementS =Elements();
     elementS.value.add(ElementS);
     elementCount.value = elementS.value.length;
     testList.clear();
@@ -90,14 +90,14 @@ class HomeController extends GetxController {
   }
   removeElement(int index){
 
-    employees.value.removeAt(index);
-    itemCount.value = employees.value.length;
+    elementS.value.removeAt(index);
+    elementCount.value = elementS.value.length;
 
   }
 
-  addElementDetails(String name, String address){
+  addElementDetails(String Serial, String Eitem){
 
-    Employee =EmployeeModel(name:name,address:address );
+    Employee =EmployeeModel(name:Serial,address:Eitem );
     employees.value.add(Employee);
     itemCount.value = employees.value.length;
     nameText.clear();
