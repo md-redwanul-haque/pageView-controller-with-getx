@@ -25,12 +25,14 @@ class DropDownButtonFormFiled extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Text(
-                'ওয়ার্ড নং:',
-                style:TextStyle(
-                  fontSize: 12
-                )
-              ),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  hintText: "Serial Number"
+                ),
+              )
+            ),
+            SizedBox(
+              width: 4,
             ),
             Expanded(
               flex: 2,
@@ -49,6 +51,7 @@ class DropDownButtonFormFiled extends StatelessWidget {
                   //     : controller
                   //     .localDatabasePresentUnionWardName
                   //     .value),
+                  hint: Text("Select Element"),
                   items: list.map((category) {
                     return DropdownMenuItem(
                         value: category,
@@ -59,6 +62,7 @@ class DropDownButtonFormFiled extends StatelessWidget {
                   onChanged: (newValue) {
                     item = newValue.toString();
                     print(item);
+                    print(controller.time);
                     // controller
                     //     .localDatabasePresentUnionWardName
                     //     .value =

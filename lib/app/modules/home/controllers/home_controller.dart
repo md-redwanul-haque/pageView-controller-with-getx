@@ -1,24 +1,48 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
-import '../../../data/Employee_Model.dart';
+
+import '../employee_model.dart';
 
 class HomeController extends GetxController {
+  var time ='';
   //TODO: Implement HomeController
-  RxList<EmployeeModel> employees =<EmployeeModel>[].obs;
-  var  name =TextEditingController();
-  var address = TextEditingController();
-  final count = 0.obs;
+  var employees =<EmployeeModel>[].obs;
+  var  nameText =TextEditingController();
+  var addressText = TextEditingController();
+  final itemCount = 0.obs;
+  late var  Employee;
+
+
+
+  late var ElementS;
+  var elementS =<Elements>[].obs;
+  final elementCount = 0.obs;
+  List testList =[];
+
+
+  late var ElmentsDetails;
+  var ElmentsDetailsLists =<ElementDetails>[].obs;
+
+
+
+
+
+
+
+
+  
   var wards =[
-    'ওয়ার্ড নং ০১',
-    'ওয়ার্ড নং ০২',
-    'ওয়ার্ড নং ০৩',
-    'ওয়ার্ড নং ০৪',
-    'ওয়ার্ড নং ০৫',
-    'ওয়ার্ড নং ০৬',
-    'ওয়ার্ড নং ০৭',
-    'ওয়ার্ড নং ০৮',
-    'ওয়ার্ড নং ০৯',
+    'Element-1',
+    'Element-2',
+    'Element-3',
+    'Element-4',
+    'Element-5',
+    'Element-6',
+    'Element-7',
+    'Element-8',
+    'Element-9',
   ];
   var ward = "".obs;
   var firstPageIsClicked = false.obs;
@@ -33,6 +57,62 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onClose() {}
-  void increment() => count.value++;
+  void onClose() {
+    nameText.dispose();
+    addressText.dispose();
+  }
+
+  addEmployee(String name, String address){
+
+    Employee =EmployeeModel(name:name,address:address );
+    employees.value.add(Employee);
+    itemCount.value = employees.value.length;
+    nameText.clear();
+    addressText.clear();
+
+  }
+
+  removeEmployee(int index){
+
+    employees.value.removeAt(index);
+    itemCount.value = employees.value.length;
+
+  }
+
+  addElement(elementSetails){
+
+    ElementS =Elements(elementDetails:elementSetails );
+    elementS.value.add(ElementS);
+    elementCount.value = elementS.value.length;
+    testList.clear();
+
+
+  }
+  removeElement(int index){
+
+    employees.value.removeAt(index);
+    itemCount.value = employees.value.length;
+
+  }
+
+  addElementDetails(String name, String address){
+
+    Employee =EmployeeModel(name:name,address:address );
+    employees.value.add(Employee);
+    itemCount.value = employees.value.length;
+    nameText.clear();
+    addressText.clear();
+
+  }
+  removeElementDetails(int index){
+
+    employees.value.removeAt(index);
+    itemCount.value = employees.value.length;
+
+  }
+
+
+
+
+  // void increment() => itemCount.value++;
 }

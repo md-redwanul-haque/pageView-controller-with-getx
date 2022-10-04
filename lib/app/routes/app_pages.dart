@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/contact/bindings/contact_binding.dart';
+import '../modules/contact/views/contact_view.dart';
 import '../modules/hiveWork/bindings/hive_work_binding.dart';
 import '../modules/hiveWork/views/hive_work_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -37,6 +39,10 @@ class AppPages {
       page: () => HiveWorkView(),
       binding: HiveWorkBinding(),
     ),
-
+    GetPage(
+      name: _Paths.CONTACT,
+      page: () => ContactView(),
+      binding: ContactBinding(),
+    ),
   ];
 }
