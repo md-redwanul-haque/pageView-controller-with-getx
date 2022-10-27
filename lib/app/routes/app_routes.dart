@@ -8,6 +8,7 @@ abstract class Routes {
   static const TESTPAGE = _Paths.TESTPAGE;
   static const HIVE_WORK = _Paths.HIVE_WORK;
   static const CONTACT = _Paths.CONTACT;
+  static const MULTIPLE_IMAGE = _Paths.MULTIPLE_IMAGE;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const TESTPAGE = '/testpage';
   static const HIVE_WORK = '/hive-work';
   static const CONTACT = '/contact';
+  static const MULTIPLE_IMAGE = '/multiple-image';
 }
