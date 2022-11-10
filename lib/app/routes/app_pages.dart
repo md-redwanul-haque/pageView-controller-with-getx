@@ -18,7 +18,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MULTIPLE_IMAGE;
+  static const INITIAL = Routes.TESTPAGE;
 
   static final routes = [
     GetPage(

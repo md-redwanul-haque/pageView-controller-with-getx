@@ -1,8 +1,25 @@
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+
+import '../model/elementModel.dart';
+import '../model/spanModel.dart';
 
 class TestpageController extends GetxController {
   //TODO: Implement TestpageController
+  var spanSerialV=''.obs;
+  var spanLengthV=''.obs;
+  var spanSerial =TextEditingController();
+  var spanLength =TextEditingController();
 
+  var spanListForL = [].obs;
+  var newList = [].obs;
+  var spanCount =0.obs;
+  var elementSerial =TextEditingController();
+  var elementSerialV =''.obs;
+  var elementName =''.obs;
+  var spanSerialForElement =''.obs;
+    var inventoryElementList =['a','b','c'].obs;
+  var elementCount =0.obs;
   var sendData=[];
   Map<int, List> prepareData = Map<int, List>();
   var addCount =0.obs;
@@ -31,38 +48,40 @@ class TestpageController extends GetxController {
     // print("spSerial${spSerial}");
    }
 
-  // var spanModel= SpanModel().obs ;
-  // addSpan({required String length, required String serial}){
-  //   spanModel.value =SpanModel(spanLength:spanLengthV.value ,spanSerial:spanSerialV.value );
-  //   forSpanData.add(spanModel.value);
-  //   spanCount.value =forSpanData.length;
-  //   spanSerial.clear();
-  //   spanLength.clear();
-  //   //spanListForL.value.add(spanName.text);
-  //
-  // }
+  var spanModel= SpanModel().obs ;
+  var forSpanData=[].obs;
+  addSpan({required String length, required String serial}){
+    spanModel.value =SpanModel(spanLength:spanLengthV.value ,spanSerial:spanSerialV.value );
+    forSpanData.add(spanModel.value);
+    spanCount.value =forSpanData.length;
+    spanSerial.clear();
+    spanLength.clear();
+    //spanListForL.value.add(spanName.text);
 
-  // removeSpan(int index){
-  //   forSpanData.removeAt(index);
-  //   spanCount.value =forSpanData.length;
-  // }
+  }
 
-  // var elementModelObj=ElementModel().obs;
-  // addElement(String eName,String eSerialNumber,String spanSeriaNo,String spanLength){
-  //   elementModelObj.value =ElementModel(elementName: elementName.value,
-  //     elementSerialNumber: elementSerial.text,
-  //     spanSerialNumber: spanSerialForElement.value,
-  //     spanLength: spanLengthV.value,
-  //   );
-  //   forElementData.add(elementModelObj.value);
-  //   elementCount.value =forElementData.length;
-  //   elementSerial.clear();
-  // }
-  //
-  // removeElement(int index){
-  //   forElementData.removeAt(index);
-  //   elementCount.value =forElementData.length;
-  // }
+  removeSpan(int index){
+    forSpanData.removeAt(index);
+    spanCount.value =forSpanData.length;
+  }
+
+  var elementModelObj=ElementModel().obs;
+  var forElementData=[].obs;
+  addElement(String eName,String eSerialNumber,String spanSeriaNo,String spanLength){
+    elementModelObj.value =ElementModel(elementName: elementName.value,
+      elementSerialNumber: elementSerial.text,
+      spanSerialNumber: spanSerialForElement.value,
+      spanLength: spanLengthV.value,
+    );
+    forElementData.add(elementModelObj.value);
+    elementCount.value =forElementData.length;
+    elementSerial.clear();
+  }
+
+  removeElement(int index){
+    forElementData.removeAt(index);
+    elementCount.value =forElementData.length;
+  }
 
 
   final count = 0.obs;
