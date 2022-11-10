@@ -85,7 +85,7 @@ class TestpageView extends GetView<TestpageController> {
                               child: Text(category,
                                   style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.amberAccent,
+                                    color: Colors.black,
                                   ),
                                   overflow: TextOverflow.ellipsis),
                             ));
@@ -137,7 +137,7 @@ class TestpageView extends GetView<TestpageController> {
                             child: Text(category,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: Colors.amberAccent,
+                                  color: Colors.black,
                                 ),
                                 overflow: TextOverflow.ellipsis),
                           ));
