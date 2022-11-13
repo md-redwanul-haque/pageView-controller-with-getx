@@ -19,6 +19,7 @@ dependencies:
   flutter: 
     sdk: flutter
   sqflite: ^2.0.3+1
+  google_maps_flutter: ^2.2.1
 
 dev_dependencies: 
   flutter_test: 

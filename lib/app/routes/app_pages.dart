@@ -1,15 +1,14 @@
 import 'package:get/get.dart';
-
-import '../modules/contact/bindings/contact_binding.dart';
-import '../modules/contact/views/contact_view.dart';
+import '../modules/dynaicDropdownDataSpan/bindings/testpage_binding.dart';
+import '../modules/dynaicDropdownDataSpan/views/testpage_view.dart';
+import '../modules/geolocatorWIthMAp/bindings/geolocator_w_ith_m_ap_binding.dart';
+import '../modules/geolocatorWIthMAp/views/geolocator_w_ith_m_ap_view.dart';
 import '../modules/hiveWork/bindings/hive_work_binding.dart';
 import '../modules/hiveWork/views/hive_work_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/multipleImage/bindings/multiple_image_binding.dart';
 import '../modules/multipleImage/views/multiple_image_view.dart';
-import '../modules/testpage/bindings/testpage_binding.dart';
-import '../modules/testpage/views/testpage_view.dart';
 import '../modules/workPage/bindings/work_page_binding.dart';
 import '../modules/workPage/views/work_page_view.dart';
 
@@ -18,7 +17,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.TESTPAGE;
+  static const INITIAL = Routes.GEOLOCATOR_W_ITH_M_AP;
 
   static final routes = [
     GetPage(
@@ -42,14 +41,14 @@ class AppPages {
       binding: HiveWorkBinding(),
     ),
     GetPage(
-      name: _Paths.CONTACT,
-      page: () => ContactView(),
-      binding: ContactBinding(),
-    ),
-    GetPage(
       name: _Paths.MULTIPLE_IMAGE,
       page: () => MultipleImageView(),
       binding: MultipleImageBinding(),
+    ),
+    GetPage(
+      name: _Paths.GEOLOCATOR_W_ITH_M_AP,
+      page: () => GeolocatorWIthMApView(),
+      binding: GeolocatorWIthMApBinding(),
     ),
   ];
 }

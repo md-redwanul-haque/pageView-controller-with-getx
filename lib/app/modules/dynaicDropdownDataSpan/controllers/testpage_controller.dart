@@ -34,18 +34,8 @@ class TestpageController extends GetxController {
     sendList.addAll(aList);
     prepareData[addCount.value]=sendList;
     sendData.addAll(prepareData.values);
-
-    // model.rbmPhyCharspanModels?[0].invNo=65.0;
-    // model.rbmPhyCharspanModels?[0].slNo=211.0;
-    //
-    // model.rbmPhyCharspanModels?[0].components?[0].elementSerial=int.parse(eSerial.toString());
-    // model.rbmPhyCharspanModels?[0].components?[0].componentId=int.parse(eName.toString());
     print(prepareData);
-    //rbmPhyCharspanModels[index].rbmPhyCharspanModels[index]
-    //for post
-    // print("eName${eName}");
-    // print("eSerial${eSerial}");
-    // print("spSerial${spSerial}");
+
    }
 
   var spanModel= SpanModel().obs ;
@@ -56,7 +46,7 @@ class TestpageController extends GetxController {
     spanCount.value =forSpanData.length;
     spanSerial.clear();
     spanLength.clear();
-    //spanListForL.value.add(spanName.text);
+
 
   }
 
