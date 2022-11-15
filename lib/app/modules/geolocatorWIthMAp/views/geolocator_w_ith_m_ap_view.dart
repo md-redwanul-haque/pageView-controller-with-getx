@@ -28,7 +28,7 @@ class GeolocatorWIthMApView extends GetView<GeolocatorWIthMApController> {
         centerTitle: true,
       ),
       body: GoogleMap(
-        mapType: MapType.hybrid,
+        mapType: MapType.normal,
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
