@@ -10,6 +10,7 @@ abstract class Routes {
   static const CONTACT = _Paths.CONTACT;
   static const MULTIPLE_IMAGE = _Paths.MULTIPLE_IMAGE;
   static const GEOLOCATOR_W_ITH_M_AP = _Paths.GEOLOCATOR_W_ITH_M_AP;
+  static const LOCALDATABASE = _Paths.LOCALDATABASE;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const CONTACT = '/contact';
   static const MULTIPLE_IMAGE = '/multiple-image';
   static const GEOLOCATOR_W_ITH_M_AP = '/geolocator-w-ith-m-ap';
+  static const LOCALDATABASE = '/localdatabase';
 }
