@@ -1,17 +1,21 @@
-class Task{
-  final int id;
-  final String task;
-  final DateTime dateTime;
+class todoModel {
+  String? id;
+  String? title;
+  String? description;
 
-  Task({required this.id, required this.task, required this.dateTime});
+  todoModel({this.id, this.title, this.description});
 
-  Map<String, dynamic> toMap(){
-    return ({
-      "id":id,
-      "task":task,
-      "creationDate":dateTime.toString(),
-    });
+  todoModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+    description = json['description'];
   }
 
-
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['title'] = this.title;
+    data['description'] = this.description;
+    return data;
+  }
 }
