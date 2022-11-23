@@ -52,9 +52,31 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
                 ),
               );
             },),
-          )
+          ),
+
+          myWidget(context)
+
+
         ],
       )
     );
+  }
+  Widget myWidget(BuildContext context) {
+    return
+    GridView.builder(
+          shrinkWrap: true,
+          physics: ScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+          ),
+          itemCount: 4,
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              color: Colors.amber,
+              child: Center(child: Text('$index')),
+            );
+          }
+      );
+
   }
 }
