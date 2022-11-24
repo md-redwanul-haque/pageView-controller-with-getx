@@ -1,5 +1,5 @@
 class todoModel {
-  String? id;
+  int? id;
   String? title;
   String? description;
 
