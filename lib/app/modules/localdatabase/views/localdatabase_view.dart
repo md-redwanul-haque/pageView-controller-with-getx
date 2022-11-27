@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 import '../controllers/localdatabase_controller.dart';
 import '../model/task_model.dart';
-
+import '../model/task_model.dart';
 class LocaldatabaseView extends GetView<LocaldatabaseController> {
   Random id = Random();
   void check()async{
@@ -54,6 +54,8 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
               );
 
              await DataBaseHelper.dbInstance.addTodos(todo);
+              controller.todoList.value=await DataBaseHelper.dbInstance.getTodos() ;
+
             }, child: Text('Add')),
             ElevatedButton(onPressed: (){}, child: Text("Update"))
           ],),
@@ -80,12 +82,34 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
           //     },),
           // ):Container(),)
 
-          Expanded(
-            child: FutureBuilder(
-              builder: (BuildContext ctx){},
-            ),
-          )
+          // Expanded(
+          //   child: FutureBuilder(
+          //     future:controller.check(),
+          //     builder: (BuildContext context, AsyncSnapshot<List<todoModel>> snapshot){
+          //       if(snapshot.hasError){
+          //         return Text("Error");
+          //       }
+          //       return snapshot.data!.isEmpty?Text("no data found"):ListView(
+          //         children: snapshot.data!.map((todoModel model){
+          //           return ListTile(
+          //             title: Text(model.id.toString()),subtitle: Text(model.title.toString()),
+          //           );
+          //         }).toList()
+          //       );
+          //     },
+          //   ),
+          // )
 
+          Expanded(child:
+              Obx(()=> ListView.builder(
+                  itemCount: controller.todoList.value.length,
+                  itemBuilder: (BuildContext context ,int index){
+                    return ListTile(
+                      title: Text(controller.todoList[index].title.toString()),subtitle: Text(controller.todoList[index].description.toString()),
+                    );
+
+                  }),)
+          )
 
 
 

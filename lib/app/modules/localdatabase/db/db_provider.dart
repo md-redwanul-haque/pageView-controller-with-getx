@@ -47,7 +47,7 @@ class DataBaseHelper{
     return await db.insert("todos", modelObj.toJson());
   }
 
-  Future<List<todoModel>>  getTodos()async{
+     getTodos()async{
     Database db =await dbInstance.getDatabase;
     var todos  = await db.query('todos',orderBy: 'id');
 

@@ -11,17 +11,16 @@ class LocaldatabaseController extends GetxController {
   final count = 0.obs;
   RxList<todoModel> todoList =<todoModel>[].obs;
 
-  void getData()async{
-    DataBaseHelper.dbInstance.getTodos();
-     todoList.value=await DataBaseHelper.dbInstance.getTodos();
-     print('todoList.value${todoList.value}');
-     update();
-
+  Future<List<todoModel>> check()async{
+    todoList.value=await DataBaseHelper.dbInstance.getTodos() ;
+    return todoList.value;
+    update();
   }
+
 
   @override
   void onInit() {
-    getData();
+   // check();
     super.onInit();
   }
 
