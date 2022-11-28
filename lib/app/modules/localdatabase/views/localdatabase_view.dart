@@ -104,9 +104,17 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
               Obx(()=> ListView.builder(
                   itemCount: controller.todoList.value.length,
                   itemBuilder: (BuildContext context ,int index){
-                    return ListTile(
-                      title: Text(controller.todoList[index].title.toString()),subtitle: Text(controller.todoList[index].description.toString()),
-                    );
+                    return Obx(()=>ListTile(
+                      leading: IconButton(icon: Icon(Icons.edit),onPressed: (){
+
+                      }),
+                      title: Text(controller.todoList[index].title.toString()),
+                      subtitle: Text(controller.todoList[index].description.toString()),
+                      trailing: IconButton(onPressed: () async{
+                        await DataBaseHelper.dbInstance.deleteTodo(controller.todoList[index].id!);
+                        controller.todoList.removeAt(index);
+                      },icon: Icon(Icons.delete),),
+                    ));
 
                   }),)
           )

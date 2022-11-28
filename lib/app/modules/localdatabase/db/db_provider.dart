@@ -47,15 +47,20 @@ class DataBaseHelper{
     return await db.insert("todos", modelObj.toJson());
   }
 
-     getTodos()async{
+  Future<List<todoModel>> getTodos()async{
     Database db =await dbInstance.getDatabase;
     var todos  = await db.query('todos',orderBy: 'id');
 
-    print(todos);
+    print('mytodo${todos}');
 
     List<todoModel> todoList= todos.isNotEmpty?todos.map((modelObj) => todoModel.fromJson(modelObj)).toList():[];
 
     return todoList;
+  }
+
+  Future deleteTodo(int id) async{
+    Database db =await dbInstance.getDatabase;
+    return await db.delete('todos',where: 'id=?',whereArgs: [id]);
 
   }
 
