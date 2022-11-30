@@ -64,5 +64,19 @@ class DataBaseHelper{
 
   }
 
+  Future updateTodo(todoModel todo) async{
+    Database db =await dbInstance.getDatabase;
+
+    return await db.update(
+      'todos',
+      todo.toJson(),
+      where: 'id=?',
+      whereArgs: [todo.id]
+
+    );
+
+
+  }
+
 }
 

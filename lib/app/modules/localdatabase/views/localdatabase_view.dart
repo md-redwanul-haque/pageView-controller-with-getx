@@ -30,7 +30,7 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextFormField(
-              controller: controller.title,
+              controller: controller.title.value,
               decoration: InputDecoration(
                 hintText: 'Title'
               ),
@@ -39,7 +39,7 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: TextFormField(
-              controller: controller.description,
+              controller: controller.description.value,
               decoration: InputDecoration(
                   hintText: 'Description'
               ),
@@ -50,14 +50,28 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
             children: [
             ElevatedButton(onPressed: () async{
               var todo = todoModel(
-                id: id.nextInt(100),title: controller.title.text,description: controller.description.text,
+                id: id.nextInt(100),title: controller.title.value.text,description: controller.description.value.text,
               );
 
              await DataBaseHelper.dbInstance.addTodos(todo);
               controller.todoList.value=await DataBaseHelper.dbInstance.getTodos() ;
 
+              controller.title.value.clear();
+              controller.description.value.clear();
+
             }, child: Text('Add')),
-            ElevatedButton(onPressed: (){}, child: Text("Update"))
+            ElevatedButton(onPressed: () async{
+              var todo = todoModel(
+                id: controller.id.value,
+                title: controller.title.value.text,
+                description: controller.description.value.text,
+              );
+              await DataBaseHelper.dbInstance.updateTodo(todo);
+              controller.todoList.value=await DataBaseHelper.dbInstance.getTodos() ;
+
+              controller.title.value.clear();
+              controller.description.value.clear();
+            }, child: Text("Update"))
           ],),
 
           // Obx(()=>controller.todoList.length!=null?Expanded(
@@ -106,7 +120,9 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
                   itemBuilder: (BuildContext context ,int index){
                     return Obx(()=>ListTile(
                       leading: IconButton(icon: Icon(Icons.edit),onPressed: (){
-
+                          controller.title.value.text=controller.todoList[index].title.toString();
+                          controller.description.value.text=controller.todoList[index].description.toString();
+                          controller.id.value=(controller.todoList[index].id?.toInt())!;
                       }),
                       title: Text(controller.todoList[index].title.toString()),
                       subtitle: Text(controller.todoList[index].description.toString()),

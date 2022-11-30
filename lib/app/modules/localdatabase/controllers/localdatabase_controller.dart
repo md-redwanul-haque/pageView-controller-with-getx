@@ -6,8 +6,9 @@ import '../model/task_model.dart';
 
 class LocaldatabaseController extends GetxController {
   //TODO: Implement LocaldatabaseController
-  var title = TextEditingController();
-  var description = TextEditingController();
+  var title = TextEditingController().obs;
+  var description = TextEditingController().obs;
+  RxInt id =0.obs;
   final count = 0.obs;
   RxList<todoModel> todoList =<todoModel>[].obs;
 
