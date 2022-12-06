@@ -20,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOCALDATABASE;
+  static const INITIAL = Routes.MULTIPLE_IMAGE;
 
   static final routes = [
     GetPage(
