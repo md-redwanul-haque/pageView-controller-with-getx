@@ -11,6 +11,8 @@ abstract class Routes {
   static const MULTIPLE_IMAGE = _Paths.MULTIPLE_IMAGE;
   static const GEOLOCATOR_W_ITH_M_AP = _Paths.GEOLOCATOR_W_ITH_M_AP;
   static const LOCALDATABASE = _Paths.LOCALDATABASE;
+  static const LIST_VIEW = _Paths.LIST_VIEW;
+  static const PAYMENT_GET_WAY = _Paths.PAYMENT_GET_WAY;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const MULTIPLE_IMAGE = '/multiple-image';
   static const GEOLOCATOR_W_ITH_M_AP = '/geolocator-w-ith-m-ap';
   static const LOCALDATABASE = '/localdatabase';
+  static const LIST_VIEW = '/list-view';
+  static const PAYMENT_GET_WAY = '/payment-get-way';
 }

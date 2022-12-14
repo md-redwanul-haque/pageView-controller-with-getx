@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/localdatabase_controller.dart';
 import '../model/task_model.dart';
 import '../model/task_model.dart';
@@ -133,9 +134,11 @@ class LocaldatabaseView extends GetView<LocaldatabaseController> {
                     ));
 
                   }),)
-          )
+          ),
 
-
+        ElevatedButton(onPressed: (){
+          Get.toNamed(Routes.LIST_VIEW);
+        }, child: Text("Next"))
 
         ],
       )

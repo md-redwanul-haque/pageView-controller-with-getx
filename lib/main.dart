@@ -13,12 +13,19 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 
 
-
 void main() async{
   await Hive.initFlutter();
   var createBox =await Hive.openBox('myBox');
   runApp(
-    GetMaterialApp(
+      all()
+  );
+}
+class all extends StatelessWidget {
+  const all({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Application",
       initialRoute: AppPages.INITIAL,
@@ -26,7 +33,7 @@ void main() async{
       theme: Themes.lightTheme,
       themeMode: ThemeMode.light,
 
-    ),
-  );
+    );
+  }
 }
 
