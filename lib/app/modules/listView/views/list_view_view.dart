@@ -13,19 +13,26 @@ class ListViewView extends GetView<ListViewController> {
         title: const Text('ListViewView'),
         centerTitle: true,
       ),
-      body: Obx(()=>ListView.builder(
-          itemCount: controller.myModelList.value.length,
-          itemBuilder: (BuildContext, int index){
-            return ListTile(
-              onTap: (){
-                controller.updateSingleItem(index);
-                print(controller.myModelList.value[0].name);
-                print(controller.myModelList.value[1].name);
-                print(controller.myModelList.value[2].name);
-              },
-              title: Obx(()=>Text("list index ${controller.myModelList[index].name}")),
-            );
-          }))
+      body: Column(
+        children: [
+          Obx(()=>ListView.builder(
+              itemCount: controller.myModelList.value.length,
+              itemBuilder: (BuildContext, int index){
+                return ListTile(
+                  onTap: (){
+                    controller.updateSingleItem(index);
+                    print(controller.myModelList.value[0].name);
+                    print(controller.myModelList.value[1].name);
+                    print(controller.myModelList.value[2].name);
+                  },
+                  title: Obx(()=>Text("list index ${controller.myModelList[index].name}")),
+                );
+              }),
+          ),
+
+        
+        ],
+      )
     );
   }
 }
